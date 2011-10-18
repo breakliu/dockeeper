@@ -1,14 +1,47 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Dockeeper</title>
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>西溪小学活动存档</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <%= stylesheet_link_tag    "base", "style" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div id="container">
+      <div id="header">
+        <h1><a href="/">西溪小学活动存档</a></h1>
+        <div id="user-navigation">
+          <ul class="wat-cf">
+            <li><%= link_to "首 页", root_url%></li>
+          </ul>
+        </div>
+        <div id="main-navigation">
+          <ul class="wat-cf">
+          </ul>
+        </div>
+      </div>
 
-<%= yield %>
-
-</body>
+      <div id="wrapper" class="wat-cf">
+        <div class="flash">
+          <% flash.each do |type, message| -%>
+            <div class="message <%= type %>">
+              <p><%= message %></p>
+            </div>
+          <% end -%>
+        </div>
+        <div id="main">
+          <%= yield %>
+          <div id="footer">
+            <div class="block">
+              <p>Copyright &copy; <%= Time.now.year %> 西溪小学活动存档  |  Powered By Rails 3.1.1  |  Developed By Lcl</p>
+            </div>      
+          </div>
+        </div>
+        <!--div id="sidebar">
+          sidebar
+        </div-->
+      </div>    
+    </div>
+  </body>
 </html>

@@ -207,6 +207,13 @@ zh-CN:
       body: "如下字段出现错误："
 
   activerecord:
+    models:
+      post: "活动"
+    attributes:
+      post:
+        title: "标 题"
+        category: "分 类"
+        content: "内 容"
     errors:
       full_messages:
         format: "%{attribute} %{message}"
