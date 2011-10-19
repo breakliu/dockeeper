@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
-  http_basic_authenticate_with :name => "admin", :password => "lcl100icq", :only => "destroy"
+  http_basic_authenticate_with :name => "admin", :password => "lcl100icq", :only => :destroy
+  before_filter :init_categories_all, :only => [:new, :create, :update, :edit]
+
   # GET /posts
   # GET /posts.json
   def index
@@ -36,12 +38,14 @@ class PostsController < ApplicationController
   # GET /posts/1/edit
   def edit
     @post = Post.find(params[:id])
+    @category_id = @post.category_id
   end
 
   # POST /posts
   # POST /posts.json
   def create
     @post = Post.new(params[:post])
+    @post.category_id = params[:category]
 
     respond_to do |format|
       if @post.save
@@ -58,6 +62,7 @@ class PostsController < ApplicationController
   # PUT /posts/1.json
   def update
     @post = Post.find(params[:id])
+    @post.category_id = params[:category]
 
     respond_to do |format|
       if @post.update_attributes(params[:post])
@@ -80,5 +85,11 @@ class PostsController < ApplicationController
       format.html { redirect_to posts_url }
       format.json { head :ok }
     end
+  end
+
+  private
+
+  def init_categories_all
+    @categories = Category.all
   end
 end

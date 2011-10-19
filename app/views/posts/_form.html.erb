@@ -17,7 +17,15 @@
   </div>
   <div class="field">
     <%= f.label :category %><br />
-    <%= f.number_field :category %>
+    <%= select_tag "category", options_from_collection_for_select(@categories, "id", "name"), :prompt => "请选择分类" %>
+    <% if not @category_id.nil? %>
+    <script>
+    $("#category option").each(function(){
+      if ( this.value == <%= @category_id %> )
+        this.selected = true;
+    });
+    </script>
+  <% end %>
   </div>
   <div class="field">
     <%= f.label :content %><br />
