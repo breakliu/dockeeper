@@ -13,21 +13,23 @@
       <div id="header">
         <h1><a href="/">西溪小学活动存档</a></h1>
         <!--div id="user-navigation">
-          <ul class="wat-cf">
-            <li><%= link_to "首 页", root_url%></li>
-          </ul>
+        <ul class="wat-cf">
+          <li><%= link_to "首 页", root_url%></li>
+        </ul>
         </div-->
       </div>
 
       <div id="wrapper" class="wat-cf">
-        <div class="flash">
-          <% flash.each do |type, message| -%>
-            <div class="message <%= type %>">
-              <p><%= message %></p>
-            </div>
-          <% end -%>
-        </div>
+
         <div id="main">
+          <div class="flash">
+            <% flash.each do |type, message| -%>
+              <div class="message <%= type %>">
+                <p><%= message %></p>
+              </div>
+            <% end -%>
+          </div>
+
           <%= yield %>
           <div id="footer">
             <div class="block">
@@ -35,9 +37,21 @@
             </div>      
           </div>
         </div>
-        <!--div id="sidebar">
-          sidebar
-        </div-->
+        <div id="sidebar">
+          <!--div class="block notice">
+          <h3>Simple Block</h3>
+          <div class="content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </div>
+          </div-->
+          <div class="block">
+            <!--h3>Links</h3-->
+            <ul class="navigation">
+              <li><a href="/">首 页</a></li>
+              <li><a href="#">2011-2012年度第一学期</a></li>
+            </ul>
+          </div>
+        </div>
       </div>    
     </div>
   </body>

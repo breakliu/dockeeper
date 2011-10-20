@@ -1,3 +1,5 @@
+<div class="post_content">
+
 <p>
   <b>标 题:</b>
   <%= @post.title %>
@@ -12,6 +14,8 @@
   <b>内 容:</b><br />
   <%= raw @post.content %>
 </p>
+
+</div>
 
 
 <%= link_to '编 辑', edit_post_path(@post) %> |

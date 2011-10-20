@@ -53,7 +53,7 @@ body {
 }
 
 #main {  
-  width: 100%;
+  width: 80%;
   float: left;    
 }
 
@@ -76,7 +76,7 @@ body {
 }
 
 #sidebar {
-  width: 25%;
+  width: 15%;
   float: right;      
 }
 
@@ -174,9 +174,9 @@ body {
 }
 
 #footer {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  text-align: right;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: left;
 }
 
 /* pagination */
@@ -302,6 +302,11 @@ input.checkbox {
   border-style: solid;
 }
 
+form div.field #post_title{
+  margin-left: 10px;
+  height: 20px;
+}
+
 /* lists */
 
 ul.list {
@@ -413,4 +418,9 @@ button.button:active, a.button:active {
 }
 .link_button{
   cursor: pointer;
+}
+
+.post_content {
+  word-wrap: break-word; 
+  word-break: normal;
 }

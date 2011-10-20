@@ -19,7 +19,7 @@
     <td><%= post.updated_at.strftime('%Y-%m-%d %H:%M:%S') %></td>
     <td><%= link_to '显 示', post %></td>
     <td><%= link_to '编 辑', edit_post_path(post) %></td>
-    <td><%= link_to '删 除', post, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to '删 除', post, confirm: '你确定删除?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
