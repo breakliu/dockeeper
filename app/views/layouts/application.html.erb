@@ -6,20 +6,17 @@
     <%= stylesheet_link_tag    "base", "style" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
+    <%= include_kindeditor_if_needed %>
   </head>
   <body>
     <div id="container">
       <div id="header">
         <h1><a href="/">西溪小学活动存档</a></h1>
-        <div id="user-navigation">
+        <!--div id="user-navigation">
           <ul class="wat-cf">
             <li><%= link_to "首 页", root_url%></li>
           </ul>
-        </div>
-        <div id="main-navigation">
-          <ul class="wat-cf">
-          </ul>
-        </div>
+        </div-->
       </div>
 
       <div id="wrapper" class="wat-cf">

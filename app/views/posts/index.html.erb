@@ -1,27 +1,29 @@
-<h1>Listing posts</h1>
+<h1>活动列表</h1>
 
-<table>
+<table class="list">
   <tr>
-    <th>Title</th>
-    <th>Category</th>
-    <th>Content</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th class="th1">序 号</th>
+    <th class="th2">标 题</th>
+    <th class="th3">分 类</th>
+    <th class="th5">创建日期</th>
+    <th class="th6">更新日期</th>
+    <th class="th7" colspan="3">操 作</th>
   </tr>
 
-<% @posts.each do |post| %>
-  <tr>
-    <td><%= post.title %></td>
-    <td><%= post.category %></td>
-    <td><%= post.content %></td>
-    <td><%= link_to 'Show', post %></td>
-    <td><%= link_to 'Edit', edit_post_path(post) %></td>
-    <td><%= link_to 'Destroy', post, confirm: 'Are you sure?', method: :delete %></td>
+<% @posts.each_with_index do |post,i| %>
+  <tr class="<%= cycle("odd", "even") %>">
+    <td><%= i %></td>
+    <td class="td2"><%= post.title %></td>
+    <td><%= post.category.name if not post.category.nil? %></td>
+    <td><%= post.created_at.strftime('%Y-%m-%d %H:%M:%S') %></td>
+    <td><%= post.updated_at.strftime('%Y-%m-%d %H:%M:%S') %></td>
+    <td><%= link_to '显 示', post %></td>
+    <td><%= link_to '编 辑', edit_post_path(post) %></td>
+    <td><%= link_to '删 除', post, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Post', new_post_path %>
+<%= button_to ' 新 建 ', new_post_path, :method => :get %>

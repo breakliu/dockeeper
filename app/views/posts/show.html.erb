@@ -1,18 +1,18 @@
 <p>
-  <b>Title:</b>
+  <b>标 题:</b>
   <%= @post.title %>
 </p>
 
 <p>
-  <b>Category:</b>
-  <%= @post.category %>
+  <b>分 类:</b>
+  <%= @post.category.name %>
 </p>
 
 <p>
-  <b>Content:</b>
-  <%= @post.content %>
+  <b>内 容:</b><br />
+  <%= raw @post.content %>
 </p>
 
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<%= link_to '编 辑', edit_post_path(@post) %> |
+<%= link_to '返 回', posts_path %>
