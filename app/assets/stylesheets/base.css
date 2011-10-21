@@ -302,10 +302,25 @@ input.checkbox {
   border-style: solid;
 }
 
-form div.field #post_title{
-  margin-left: 10px;
+form div.field #post_title, form div.field #category {
+  margin-left: 5px;
+}
+
+form div.field #post_title {
+  width: 400px;
   height: 20px;
 }
+
+form div.field #category {
+  width: 100px;
+  text-align: center;
+  height: 20px;
+}
+
+form div.field {
+  margin-bottom: 10px;
+}
+
 
 /* lists */
 
