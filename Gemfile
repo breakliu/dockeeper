@@ -7,8 +7,11 @@ gem 'rails', '3.1.1'
 
 gem 'sqlite3'
 gem 'therubyracer'
-gem 'rails_kindeditor'
-gem "carrierwave"
+#gem 'rails_kindeditor'
+#gem "carrierwave"
+gem "ckeditor"
+gem "paperclip"
+
 
 
 # Gems used only for assets and not required

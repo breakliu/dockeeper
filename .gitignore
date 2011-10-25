@@ -6,3 +6,4 @@ tmp/
 *~
 public/uploads/
 public/assets/
+public/ckeditor_assets/*.*
