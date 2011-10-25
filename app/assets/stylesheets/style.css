@@ -292,6 +292,9 @@ table.list th.th6 { width: 150px; }
 table.list th.th7 { width: 150px; }
 
 table.list td.td2 { text-align:left; }
+table.list td.td2 a:link { text-decoration: none; }
+table.list td.td2 a { color: black; text-decoration: none; }
+table.list td.td2 a:hover { color: grey; }
 
 table.list tr.odd { background: #cce4ff; }
 table.list tr.even { background: pink; }
