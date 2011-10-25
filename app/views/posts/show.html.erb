@@ -20,3 +20,10 @@
 
 <%= link_to '编 辑', edit_post_path(@post) %> |
 <%= link_to '返 回', posts_path %>
+
+
+<% content_for :sidebar do %>
+  <% @posts.each do |post| %>
+    <li><%= link_to post.title, post %></li>
+  <% end %>
+<% end %>
