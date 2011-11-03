@@ -2,6 +2,7 @@
 class PostsController < ApplicationController
   http_basic_authenticate_with :name => "admin", :password => "lcl100icq", :only => :destroy
   before_filter :init_categories_all, :only => [:new, :create, :update, :edit]
+  before_filter :init_attrs_all, :only => [:new, :create, :update, :edit]
 
   # GET /posts
   # GET /posts.json
@@ -41,6 +42,7 @@ class PostsController < ApplicationController
   def edit
     @post = Post.find(params[:id])
     @category_id = @post.category_id
+    @attr_id = @post.attr_id
   end
 
   # POST /posts
@@ -48,6 +50,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(params[:post])
     @post.category_id = params[:category]
+    @post.attr_id = params[:attr]
 
     respond_to do |format|
       if @post.save
@@ -65,6 +68,7 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     @post.category_id = params[:category]
+    @post.attr_id = params[:attr]
 
     respond_to do |format|
       if @post.update_attributes(params[:post])
@@ -93,5 +97,9 @@ class PostsController < ApplicationController
 
   def init_categories_all
     @categories = Category.all
+  end
+
+  def init_attrs_all
+    @attrs = Attr.all
   end
 end

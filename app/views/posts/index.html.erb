@@ -5,6 +5,7 @@
     <th class="th1">序 号</th>
     <th class="th2">标 题</th>
     <th class="th3">分 类</th>
+    <th class="th3_2">属 性</th>
     <th class="th5">创建日期</th>
     <!--th class="th6">更新日期</th-->
     <th class="th7" colspan="2">操 作</th>
@@ -15,6 +16,7 @@
       <td><%= i+1 %></td>
       <td class="td2"><%= link_to post.title, post %></td>
       <td><%= post.category.name if not post.category.nil? %></td>
+      <td><%= post.attr.name if not post.attr.nil? %></td>
       <td><%= post.created_at.strftime('%Y年%m月%d日') %></td>
       <!--td><%= post.updated_at.strftime('%Y-%m-%d %H:%M:%S') %></td-->
       <!--td><%= link_to '显 示', post %></td-->

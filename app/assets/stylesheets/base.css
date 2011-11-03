@@ -302,7 +302,7 @@ input.checkbox {
   border-style: solid;
 }
 
-form div.field #post_title, form div.field #category {
+form div.field #post_title, form div.field #category, form div.field #attr {
   margin-left: 5px;
 }
 
@@ -311,7 +311,7 @@ form div.field #post_title {
   height: 20px;
 }
 
-form div.field #category {
+form div.field #category, form div.field #attr {
   width: 100px;
   text-align: center;
   height: 20px;

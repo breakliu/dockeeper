@@ -11,7 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111024132317) do
+ActiveRecord::Schema.define(:version => 20111103030134) do
+
+  create_table "attrs", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -47,6 +53,7 @@ ActiveRecord::Schema.define(:version => 20111024132317) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "category_id"
+    t.integer  "attr_id"
   end
 
 end

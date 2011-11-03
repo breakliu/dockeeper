@@ -1,4 +1,6 @@
 Dockeeper::Application.routes.draw do
+  resources :attrs
+
   resources :categories
 
   resources :posts

@@ -283,13 +283,14 @@ table.list { text-align: center; }
 table.list th { height: 30px; }
 table.list td { height: 25px; }
 
-table.list th.th1 { width: 80px; }
-table.list th.th2 { width: 650px; }
-table.list th.th3 { width: 80px; }
-table.list th.th4 { width: 200px; }
-table.list th.th5 { width: 150px; }
-table.list th.th6 { width: 150px; }
-table.list th.th7 { width: 150px; }
+table.list th.th1 { width: 50px; }
+table.list th.th2 { width: 550px; }
+table.list th.th3 { width: 70px; }
+table.list th.th3_2 { width: 70px; }
+/*table.list th.th4 { width: 200px; }*/
+table.list th.th5 { width: 120px; }
+/*table.list th.th6 { width: 150px; }*/
+table.list th.th7 { width: 120px; }
 
 table.list td.td2 { text-align:left; }
 table.list td.td2 a:link { text-decoration: none; }

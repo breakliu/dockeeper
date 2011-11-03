@@ -214,6 +214,7 @@ zh-CN:
         title: "标 题"
         category: "分 类"
         content: "内 容"
+        attr: "属 性"
     errors:
       full_messages:
         format: "%{attribute} %{message}"
