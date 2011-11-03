@@ -1,0 +1,23 @@
+<h1>Listing attrs</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @attrs.each do |attr| %>
+  <tr>
+    <td><%= attr.name %></td>
+    <td><%= link_to 'Show', attr %></td>
+    <td><%= link_to 'Edit', edit_attr_path(attr) %></td>
+    <td><%= link_to 'Destroy', attr, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Attr', new_attr_path %>
