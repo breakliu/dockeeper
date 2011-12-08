@@ -299,3 +299,12 @@ table.list td.td2 a:hover { color: grey; }
 
 table.list tr.odd { background: #cce4ff; }
 table.list tr.even { background: pink; }
+
+.new-thing {
+  text-align: right;
+}
+
+.new-thing input{
+  width: 70px;
+  height: 25px;
+}
