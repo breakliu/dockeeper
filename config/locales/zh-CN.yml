@@ -215,6 +215,7 @@ zh-CN:
         category: "分 类"
         content: "内 容"
         attr: "属 性"
+        school_year: "学 期"
     errors:
       full_messages:
         format: "%{attribute} %{message}"

@@ -1,9 +1,13 @@
 Dockeeper::Application.routes.draw do
+  resources :school_years
+
   resources :attrs
 
   resources :categories
 
   resources :posts
+  
+  match '/posts/school_year/:school_year_id' => 'posts#index_by_school_year'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

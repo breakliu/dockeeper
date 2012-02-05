@@ -20,6 +20,9 @@
   <div class="field">
     <%= f.label :attr %><%= select_tag "attr", options_from_collection_for_select(@attrs, "id", "name", @attr_id) %>
   </div>
+<div class="field">
+    <%= f.label :school_year %><%= select_tag "school_year", options_from_collection_for_select(@school_years, "id", "name", @school_year_id) %>
+  </div>
   <div class="field">
     <%= f.label :content %>
     <%= f.text_area :content, :id => "kindeditor_id", :height => 400 %>

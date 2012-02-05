@@ -1,0 +1,23 @@
+<h1>Listing school_years</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @school_years.each do |school_year| %>
+  <tr>
+    <td><%= school_year.name %></td>
+    <td><%= link_to 'Show', school_year %></td>
+    <td><%= link_to 'Edit', edit_school_year_path(school_year) %></td>
+    <td><%= link_to 'Destroy', school_year, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New School year', new_school_year_path %>

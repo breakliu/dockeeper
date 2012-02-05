@@ -3,13 +3,23 @@ class PostsController < ApplicationController
   http_basic_authenticate_with :name => "admin", :password => "lcl100icq", :only => :destroy
   before_filter :init_categories_all, :only => [:new, :create, :update, :edit]
   before_filter :init_attrs_all, :only => [:new, :create, :update, :edit]
+  before_filter :init_school_years_all, :only => [:new, :create, :update, :edit]
   
   include_kindeditor :only => [:new, :edit]
 
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    @posts = Post.limit(20)
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @posts }
+    end
+  end
+  
+  def index_by_school_year
+    @posts = Post.where(:school_year_id => params[:school_year_id])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -45,6 +55,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @category_id = @post.category_id
     @attr_id = @post.attr_id
+    @school_year_id = @post.school_year_id
   end
 
   # POST /posts
@@ -53,6 +64,7 @@ class PostsController < ApplicationController
     @post = Post.new(params[:post])
     @post.category_id = params[:category]
     @post.attr_id = params[:attr]
+    @post.school_year_id = params[:school_year]
 
     respond_to do |format|
       if @post.save
@@ -71,6 +83,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.category_id = params[:category]
     @post.attr_id = params[:attr]
+    @post.school_year_id = params[:school_year]
 
     respond_to do |format|
       if @post.update_attributes(params[:post])
@@ -103,5 +116,9 @@ class PostsController < ApplicationController
 
   def init_attrs_all
     @attrs = Attr.all
+  end
+  
+  def init_school_years_all
+    @school_years = SchoolYear.all
   end
 end

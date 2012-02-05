@@ -33,7 +33,7 @@
           <%= yield %>
           <div id="footer">
             <div class="block">
-              <p>Copyright &copy; <%= Time.now.year %> 西溪小学活动存档  |  Powered By Rails 3.1.1  |  Developed By Lcl</p>
+              <p>Copyright &copy; <%= Time.now.year %> 西溪小学活动存档  |  Powered By Rails 3.2.1  |  Developed By Lcl</p>
             </div>      
           </div>
         </div>
@@ -48,7 +48,9 @@
             <h3>链 接</h3>
             <ul class="navigation">
               <li><a href="/">首 页</a></li>
-              <li><a href="#">2011-2012年度第一学期</a></li>
+			  <% SchoolYear.all.each do |y| %>
+				<li><a href="/posts/school_year/<%= y.id %>"><%= y.name %></a></li>
+			  <% end %>
             </ul>
           </div>
 
