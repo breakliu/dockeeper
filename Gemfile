@@ -6,7 +6,7 @@ gem 'rails', '3.2.1'
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-#gem 'therubyracer'
+gem 'therubyracer'
 gem 'rails_kindeditor'
 gem "carrierwave"
 #gem "ckeditor"
@@ -28,7 +28,7 @@ gem 'jquery-rails'
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Use unicorn as the web server
-gem 'unicorn'
+#gem 'unicorn'
 
 # Deploy with Capistrano
 # gem 'capistrano'

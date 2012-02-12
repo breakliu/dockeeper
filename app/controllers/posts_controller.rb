@@ -12,6 +12,7 @@ class PostsController < ApplicationController
   def index
     #@posts = Post.limit(20)
     @posts = SchoolYear.first.posts
+    @current_schoolyear = SchoolYear.first.name
 
     respond_to do |format|
       format.html # index.html.erb
@@ -21,6 +22,7 @@ class PostsController < ApplicationController
   
   def index_by_school_year
     @posts = Post.where(:school_year_id => params[:school_year_id])
+    @current_schoolyear = SchoolYear.find_by_id(params[:school_year_id]).name
 
     respond_to do |format|
       format.html # index.html.erb
