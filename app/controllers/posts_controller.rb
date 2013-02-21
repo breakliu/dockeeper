@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   before_filter :init_attrs_all, :only => [:new, :create, :update, :edit]
   before_filter :init_school_years_all, :only => [:new, :create, :update, :edit]
   
-  include_kindeditor :only => [:new, :edit]
+  #include_kindeditor :only => [:new, :edit]
 
   # GET /posts
   # GET /posts.json
